@@ -8,4 +8,8 @@
 
 - later execute the command "docker-compose up --build --force-recreate" for install dependencies and run project
 
+- Execute the command " docker-compose run web python manage.py makemigrations " 
+
+- and the command " docker-compose run web python manage.py migrate "
+
 - for execute project in future use the command "docker-compose up" 
