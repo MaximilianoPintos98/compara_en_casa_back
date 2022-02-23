@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: 'compara_en_casa_db'
+      MYSQL_ROOT_PASSWORD: '1406'
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code_compara
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
